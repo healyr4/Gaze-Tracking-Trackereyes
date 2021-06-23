@@ -84,3 +84,56 @@ For example:python src\main.py  -o results -it cam  --show_input --show_video
 ```
 
 The results will be in the directory you specify, in the above example it's my_results
+
+## Command Line Arguments
+
+```
+usage: main.py  -it INPUT_TYPE [-i INPUT_PATH]
+               [-o OUTPUT_PATH] [-l CPU_EXTENSION] [-d DEVICE] [-r]
+               [--show_input] [--show_video] [--record] [calibrate]
+
+optional arguments:
+  -it INPUT_TYPE, --input_type INPUT_TYPE
+                        Specify 'video', 'image' or 'cam' (to work with
+                        camera).
+  -i INPUT_PATH, --input_path INPUT_PATH
+                        Path to image or video file.
+  -o OUTPUT_PATH, --output_path OUTPUT_PATH
+                        Path to image or video file.
+  -l CPU_EXTENSION, --cpu_extension CPU_EXTENSION
+                        MKLDNN (CPU)-targeted custom layers.Absolute path to a
+                        shared library with thekernels impl.
+  -d DEVICE, --device DEVICE
+                        Specify the target device to infer on: CPU, GPU, FPGA
+                        or MYRIAD is acceptable. Sample will look for a
+                        suitable plugin for device specified (CPU by default)
+  -r, --raw_output_message
+                        Optional. Output inference results raw values showing
+  --show_input          Optional. Show input video
+  --show_video          Optional. Show gaze on screen
+  --calibrate           Optional. Calibrate for your eyes
+  --record              Optional. This was for my own project, getting gaze angles to compare with a Dataset
+  
+  
+```
+
+
+## Results
+Calibration is needed for every user. Gaze angles don't accurately map to on screen-coordinates. This is due to head movement which interfers with the calibration model. I have built a model using a Deep Neural Network to create a model to infer point of gaze. This will be uploaded at a later datewhen it is integrated with the project. 
+
+Here is an example of the Mean Absolute Error obtained using methods such as logistic regression with and without facial landmarks, and a DNN with and without facial landmarks. The mean absolute error was quite low. A video of the calibration stage was used as the training set, and a video of a person performing a task was used as the testing set. The groundtruth was data from a Tobii gaze tracker. This is for a person's right eye, in the y-direction
+
+![image4](references/gaze-point-prediction.png)
+
+This is the loss obtained:
+
+![image5](references/loss.png)
+
+## Future Works
+
+- Make an interface for the calibration screen, rather than having to calibrate for each eye and change eye file names
+- Alter how the ouput video appears on the screen, it is flakey
+- Integrate the deep neural network, calibrate using the 9 point model, plus the DNN
+- Make code more readable
+
+Any questions, feel free to contact me.
