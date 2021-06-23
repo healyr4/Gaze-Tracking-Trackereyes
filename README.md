@@ -7,7 +7,15 @@ The project uses OpenVINO, a toolkit for inference and neural network optimisati
 - [Head Pose Estimation](https://docs.openvinotoolkit.org/latest/omz_models_model_head_pose_estimation_adas_0001.html)
 - [Gaze Estimation](https://docs.openvinotoolkit.org/latest/omz_models_model_gaze_estimation_adas_0002.html)
 
+The application outputs a live video feed of where a person is looking at, on their monitor. Here is a screenshot from a video capture, with gaze overlayed on the webcam feed.
+![image1](references/video-screen.png)
+
+Here is a screenshot from a video capture, with gaze overlayed on the an image.
+![image2](references/video-screen-picture.png)
+
+
 ### The Pipeline
 
 The pipeline is shown as follows:
 
+![image3](references/pipeline.png)
