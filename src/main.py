@@ -20,7 +20,7 @@ import pandas as pd
 from data_evaluation import data_preprocess, return_coordinates
 WIDTH, HEIGHT = pyautogui.size()
 print(WIDTH,HEIGHT)
-filename ='Participants/P_13/dot_test.csv'
+filename ='dot_test.csv'
 def build_argparser():
     """
     Parse command line arguments.

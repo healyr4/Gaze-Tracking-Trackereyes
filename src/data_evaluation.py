@@ -27,7 +27,7 @@ import statistics
 def data_preprocess():
     # Take in gaze angle x and y from main
     SLICE_NUM = 5
-    path = 'GAZE-TRACKING-TRACKEREYES\calibration'
+    path = 'calibration'
     extension = 'csv'
     os.chdir(path)
     print (path)
