@@ -76,8 +76,10 @@ def return_coordinates(np_averages,gaze_angle_x, gaze_angle_y):
     # x1,y1 are screen coordinates
     return(x1,y1)
 
+
 def average(lst,num):
     # Slice the list for starting and ending program
+    # Removes first and last few calibration gaze angles
     lst = lst[num:-num]
     return sum(lst) / len(lst)
 
@@ -94,20 +96,20 @@ def get_csv(filename):
     data = pd.read_csv(filename, header=0)
 
     # Now get columns as lists
-    point = list(map(int,data.Point))
-    frame_num = list(map(int,data.Frame))
-    time = list(map(float, data.Time))
+    # point = list(map(int,data.Point))
+    # frame_num = list(map(int,data.Frame))
+    # time = list(map(float, data.Time))
     gaze_x = list(map(float, data.Gaze_angle_x))
     gaze_y = list(map(float, data.Gaze_angle_y))
     gaze_angles= np.column_stack((gaze_x, gaze_y))
 
-    x = gaze_x
-    y = gaze_y
+    #x = gaze_x
+    #y = gaze_y
     H = gaze_angles
     return H
 
 
-
+# Function to create a scatter plot of gaze angles for Calibration stage
 def plot_scatter(list):
     count=1
     plt.subplots()
