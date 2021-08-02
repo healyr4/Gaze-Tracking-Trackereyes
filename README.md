@@ -134,7 +134,7 @@ This is the loss obtained:
 
 ## Future Works
 
-- Remive file paths and redundant code from my personal data collection using the eye tracker
+- Remove file paths and redundant code from my personal data collection using the eye tracker
 - Make an interface for the calibration screen, rather than having to calibrate for each eye and change eye file names
 - Alter how the ouput video appears on the screen, it is flakey
 - Integrate the deep neural network, calibrate using the 9 point model, plus the DNN, instead of just using interpolation
