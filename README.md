@@ -70,7 +70,7 @@ python "%INTEL_OPENVINO_DIR%\deployment_tools\tools\model_downloader\downloader.
 
 ## Demo
 
-Run the application using a video of your choice. Ensure you're in te main directory. The command should be of this format
+Run the application using a video of your choice. Ensure you're in the main directory. The command should be of this format
 
 ```
 # Windows
